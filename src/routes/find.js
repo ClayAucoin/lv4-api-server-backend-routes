@@ -9,7 +9,7 @@ const router = express.Router()
 router.use(express.json());
 
 router.get("/:id", validateId, (req, res, next) => {
-  console.log("GET /find-movie/id")
+  console.log("GET /find/id")
 
   console.log("id:", req.params, "typeof:", typeof req.params)
 

@@ -11,7 +11,7 @@ router.use(express.json());
 router.use(express.urlencoded({ extended: true }))
 
 router.post("/", validateMovieBody, (req, res, next) => {
-  console.log("POST /movies", req.body)
+  console.log("POST /find", req.body)
   // to use randomUUID id 
   // const newMovie = req.body
   // const newItem = { ...req.body, id: randomUUID() }

@@ -7,7 +7,7 @@ import data from "../data.js"
 const router = express.Router()
 
 router.get("/", (req, res, next) => {
-  console.log("GET /movies")
+  console.log("GET /read")
   res.status(200).json({
     ok: true,
     data: data
