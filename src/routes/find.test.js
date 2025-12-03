@@ -7,10 +7,10 @@ import express from "express"
 import app from "../app.js"
 import movies from "../data.js"
 
-describe("GET /find-movie/:ID", () => {
+describe("GET /items/:ID", () => {
 
   it("returns single movie with the given id from", async () => {
-    const res = await request(app).get("/movies/16")
+    const res = await request(app).get("/items/16")
     const { ok, data } = res.body
 
     expect(res.status).toBe(200)
@@ -26,7 +26,7 @@ describe("GET /find-movie/:ID", () => {
   })
 
   it("returns 404 when movie is not found", async () => {
-    const res = await request(app).get("/find-movie/99999")
+    const res = await request(app).get("/items/99999")
 
     expect(res.status).toBe(404)
     expect(res.body.ok).toBe(false)

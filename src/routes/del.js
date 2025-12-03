@@ -9,10 +9,10 @@ const router = express.Router()
 router.use(express.json());
 
 router.delete("/:id", validateId, (req, res, next) => {
-  console.log("DELETE /del-movie")
+  console.log("DELETE /items")
   const id = Number(req.params.id)
 
-  const removed = deleteMovieById(id)
+  const removed = deleteItemById(id)
 
   if (!removed) {
     return next(sendError(404, "Movie not found", "NOT_FOUND"))
@@ -26,7 +26,7 @@ router.delete("/:id", validateId, (req, res, next) => {
 })
 
 // helper: delete movie
-export function deleteMovieById(id) {
+export function deleteItemById(id) {
   const index = movies.findIndex((movie) => movie.id === id)
 
   if (index === -1) {

@@ -4,14 +4,14 @@ import { describe, it, expect } from "vitest"
 import request from "supertest"
 import express from "express"
 
-import moviesRouter from "./movies.js"
+import readRouter from "./read.js"
 import movies from "../data.js"
 
 const router = express()
 router.use(express.json())
-router.use(moviesRouter)
+router.use(readRouter)
 
-describe("GET /movies", () => {
+describe("GET /items", () => {
   it("returns the movies from data.js", async () => {
     const res = await request(router).get("/")
     const { ok, data } = res.body

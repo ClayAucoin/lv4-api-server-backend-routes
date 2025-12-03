@@ -11,10 +11,10 @@ import colorLogger from "./middleware/colorLogger.js"
 
 // import routes
 import rootRouter from "./routes/root.js"
-import moviesRouter from "./routes/movies.js"
-import findMovieRouter from "./routes/find-movie.js"
-import addMovieRouter from "./routes/add-movie.js"
-import delMovieRouter from "./routes/del-movie.js"
+import readRouter from "./routes/read.js"
+import findRouter from "./routes/find.js"
+import addRouter from "./routes/add.js"
+import delRouter from "./routes/del.js"
 
 const app = express();
 // const port = 3000;
@@ -29,10 +29,10 @@ app.use(colorLogger)
 
 // use routes
 app.use("/", rootRouter)
-app.use("/movies", moviesRouter)
-app.use("/movies", findMovieRouter)
-app.use("/movies", addMovieRouter)
-app.use("/movies", delMovieRouter)
+app.use("/items", readRouter)
+app.use("/items", findRouter)
+app.use("/items", addRouter)
+app.use("/items", delRouter)
 
 
 export function globalErrorHandler(err, req, res, next) {

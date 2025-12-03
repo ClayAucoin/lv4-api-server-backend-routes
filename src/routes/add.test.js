@@ -3,12 +3,12 @@
 import { describe, it, expect } from "vitest";
 import request from "supertest";
 import express from "express"
-import addMovieRouter from "./add-movie.js"
+import addRouter from "./add.js"
 import movies from "../data.js"
 
 const router = express()
 router.use(express.json())
-router.use(addMovieRouter)
+router.use(addRouter)
 
 describe("Server Routes", () => {
 

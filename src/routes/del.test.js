@@ -5,7 +5,7 @@ import request from "supertest"
 import express from "express"
 
 import app from "../app.js"
-import { deleteMovieById } from "./del-movie.js"
+import { deleteItemById } from "./del.js"
 import { sendError } from "../utils/sendError.js"
 import data from "../data.js"
 
@@ -17,9 +17,9 @@ beforeEach(() => {
   data.push(...JSON.parse(JSON.stringify(originalMovies)))
 })
 
-describe("DELETE /del-movie/:id", () => {
+describe("DELETE /items/:id", () => {
   it("deletes a movie successfully", async () => {
-    const res = await request(app).delete("/movies/8")
+    const res = await request(app).delete("/items/8")
 
     expect(res.status).toBe(200)
     expect(res.body.ok).toBe(true)
@@ -31,7 +31,7 @@ describe("DELETE /del-movie/:id", () => {
   })
 
   it("returns 404 when movie does not exist", async () => {
-    const res = await request(app).delete("/del-movie/9999")
+    const res = await request(app).delete("/items/9999")
 
     expect(res.status).toBe(404)
     expect(res.body.ok).toBe(false)
@@ -40,6 +40,6 @@ describe("DELETE /del-movie/:id", () => {
 })
 
 it("returns null if -1", () => {
-  const err = deleteMovieById(-1)
+  const err = deleteItemById(-1)
   expect(err).toBeNull
 })
