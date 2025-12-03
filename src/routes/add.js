@@ -1,4 +1,4 @@
-// src/routes/add-movie.js
+// src/routes/add.js
 
 import express from "express"
 import data from "../data.js"

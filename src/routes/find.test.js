@@ -1,4 +1,4 @@
-// src/routes/movies.test.js
+// src/routes/find.test.js
 
 import { describe, it, expect } from "vitest"
 import request from "supertest"

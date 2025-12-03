@@ -1,4 +1,4 @@
-// src/routes/find-movie.js
+// src/routes/find.js
 
 import express from "express"
 import data from "../data.js"

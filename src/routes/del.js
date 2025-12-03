@@ -1,4 +1,4 @@
-// src/routes/del-movie.js
+// src/routes/del.js
 
 import express from "express"
 import movies from "../data.js"

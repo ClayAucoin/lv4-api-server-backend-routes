@@ -1,4 +1,4 @@
-// src/routes/del-movie.test.js
+// src/routes/del.test.js
 
 import { describe, it, expect, beforeEach } from "vitest"
 import request from "supertest"

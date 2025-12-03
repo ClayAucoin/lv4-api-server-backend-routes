@@ -1,4 +1,4 @@
-// src/routes/movies.js
+// src/routes/read.js
 
 import express from "express"
 import { sendError } from "../utils/sendError.js"
