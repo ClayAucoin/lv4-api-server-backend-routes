@@ -6,15 +6,12 @@ import cors from "cors"
 import { sendError } from "./utils/sendError.js"
 
 // middleware
-import fileLogger from "./middleware/fileLogger.js"
+// import fileLogger from "./middleware/fileLogger.js"
 import colorLogger from "./middleware/colorLogger.js"
 
 // import routes
 import rootRouter from "./routes/root.js"
-import readRouter from "./routes/read.js"
-import findRouter from "./routes/find.js"
-import addRouter from "./routes/add.js"
-import delRouter from "./routes/del.js"
+import itemsRouter from "./routes/items.js"
 
 const app = express();
 // const port = 3000;
@@ -24,15 +21,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
 // middleware: use log files
-app.use(fileLogger)
+// app.use(fileLogger)
 app.use(colorLogger)
 
 // use routes
 app.use("/", rootRouter)
-app.use("/items", readRouter)
-app.use("/items", findRouter)
-app.use("/items", addRouter)
-app.use("/items", delRouter)
+app.use("/items", itemsRouter)
 
 
 export function globalErrorHandler(err, req, res, next) {

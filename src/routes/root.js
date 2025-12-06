@@ -8,7 +8,7 @@ const router = express.Router()
 router.get("/", (req, res, next) => {
   console.log("GET /root")
   let response = "<h1>Express Running</h1>"
-  console.log(response)
+  // console.log(response)
 
   res.status(200).send(response)
 })
